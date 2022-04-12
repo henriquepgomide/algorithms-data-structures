@@ -13,7 +13,14 @@ example, 6 is not a prime because it is divisible by 1, 2, 3, and 6.
 
 You can assume that the input number is a positive integer.
 """
+import math
 
 
-def is_prime(n):
-    pass
+def is_prime(n: int) -> bool:
+    """Check whether a number is prime"""
+    if n < 2:
+        return False
+    for i in range(2, int(math.sqrt(n)) + 1):
+        if n % i == 0:
+            return False
+    return True
